@@ -1,0 +1,40 @@
+Stream API Characteristics
+
+
+Not a data structures: 
+Streams have no storage. 
+They carry values from a source through a pipeline of operations. 
+
+They also never modify the underlying data structure.
+
+Designed for lambdas All Stream operations take lambdas as arguments 
+
+Do not support indexed access You can ask for the first element,
+ but not the second or third or last element.
+Can easily be output as arrays or Lists Simple syntax to build an array or List from a Stream.
+
+Lazy Many Stream operations are postponed until it is known how much data is eventually needed 
+
+Parallelizable If you designate a Stream as parallel,
+ then operations on it will automatically be done concurrently,
+  without having to write explicit multi-threading code
+  
+  Not data structures
+	Designed for lambda
+ Do not support indexed access
+ Can easily output as arrays or list
+ 
+From Individual Values
+	 Stream.of(val1,val2...)
+From an Array 
+	Stream.of(someArray)
+From List Or Collection 
+	List1.stream() OR coll1.stream(
+	
+	
+	
+1) terminal operations is that intermediate operations return a stream as a result and terminal operations return non-stream values like primitive or object or collection or may not return anything.
+
+2) As intermediate operations return another stream as a result, they can be chained together to form a pipeline of operations. Terminal operations can not be chained together.
+
+3) Pipeline of operations may contain any number of intermediate operations, but there has to be only one terminal operation, that too at the end of pipeline.
